@@ -34,7 +34,7 @@ Install git:
 
 Then, clone the project from GitHub:
 
-    git clone https://github.com/DUDULRX/roarm_ws.git
+    git clone https://github.com/Daniel-Zhang2017/roarm_ws.git
 
 Install dependencies:
 
@@ -49,7 +49,7 @@ Install dependencies:
     sudo apt update
     sudo apt upgrade
     
-    sudo apt install ros-humble-desktop
+    sudo apt install ros-humble-desktop  #I suggest to use fishros's quick install. Here is the link: https://github.com/fishros/install
     sudo apt install ros-dev-tools
     sudo apt install net-tools
     sudo apt install ros-humble-moveit-*
@@ -73,13 +73,13 @@ pip install -r requirements.txt
 
 Initial compilation:
 
-    cd /home/ws/roarm_ws
+    cd roarm_ws
     sudo chmod +x build_first.sh
     . build_first.sh
 
 Contents of build_first.sh (automatically run by the script; no manual execution required). This step may take a while to complete.
 
-    cd /home/ws/roarm_ws
+    cd roarm_ws
     colcon build --packages-select roarm_msgs 
     colcon build --packages-select moveit_servo 
     colcon build --packages-select rviz_marker_tools 
@@ -92,7 +92,7 @@ Contents of build_first.sh (automatically run by the script; no manual execution
     colcon build --packages-select roarm_moveit_mtc_demo 
     colcon build --packages-select roarm_moveit_servo 
     colcon build --packages-select roarm_description roarm_driver roarm_moveit --symlink-install 
-    echo "source /home/ws/roarm_ws/install/setup.bash" >> ~/.bashrc
+    echo "source install/setup.bash" >> ~/.bashrc
     source ~/.bashrc 
 
 Then, set the robotic arm model，
